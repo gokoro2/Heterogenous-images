@@ -70,7 +70,7 @@ ds_pet = FileDataset("", {}, file_meta=Dataset(), preamble=b"\0" * 128)
 ds_pet.file_meta.MediaStorageSOPClassUID = pydicom.uid.generate_uid()
 ds_pet.file_meta.TransferSyntaxUID = pydicom.uid.ExplicitVRLittleEndian
 
-# Set common DICOM attributes for PET image
+# Common DICOM attributes for simulated PET tumor image
 ds_pet.SOPInstanceUID = pydicom.uid.generate_uid()
 ds_pet.SOPClassUID = pydicom.uid.PositronEmissionTomographyImageStorage
 ds_pet.StudyInstanceUID = "1.2.3.4"
@@ -92,7 +92,7 @@ ds_pet.BitsStored = 16
 ds_pet.HighBit = 15
 ds_pet.PixelRepresentation = 0  # Unsigned integer
 
-# Create a unique filename for the DICOM file
+# Create a filename for the DICOM file
 filename_pet = "XYZ.dcm"
 
 # Save the PET DICOM file
@@ -125,7 +125,7 @@ plt.axis("off")
 #plt.tight_layout()
 #plt.show()
 
-# Save the figure with high DPI (dots per inch) for better quality
+# Save the figure with high DPI (dots per inch) 
 plt.tight_layout()
 plt.savefig('XYZ', dpi=300)
 plt.show()
